@@ -5,8 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We write about things">
-    <meta name="author" content="Titans Times Team (bitesizedbee4)">
+    <!-- <meta name="description" content="We write about things">
+    <meta name="author" content="Titans Times Team (bitesizedbee4)"> -->
+    <meta name="description" content="Good evening companisons and comrades, and welcome to another volume of everyone’s favorite guild publication, Titan Times; the best place to go for everything ANO and thoughtful insights into all things Wynn! This is definitely not the third time this volume has been written. I hope all of Salted’s patch notes haven’t made you completely sick of the Hero Beta yet, cause we’ll be getting to that shortly. But first, the usual. Let’s not keep y’all in my intro any longer!">
+    <meta name="author" content="bitesizedbee4">
+    <meta name="og:image" content="https://cdn.discordapp.com/attachments/986827912974045244/995727527291130027/unknown.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+
     <link rel="canonical" href="https://titans-valor-brilliance.github.io/vol4/">
     <link rel="shortcut icon" href="../img/favicon.ico">
 
@@ -306,40 +312,56 @@
 <p> <br /> </p>
 
 <p><strong>Trivia Fact</strong> ✨</p>
-<div style="margin-bottom: -15vh; margin-top: 5vh;">
-<div id="trivia_div">
-<p id="trivia_txt" class="dark_blue" style="font-family: Minecraftia; font-size: 2vh; width: 100%">
-If (or should I say when) all the ice on the planet were to melt, the sea level would rise about 79.9 meters (about 260 feet).
-</p>
-</div>
-<img src="https://cdn.discordapp.com/attachments/703019773965107250/1000975786683142184/file_1.png" width=15% style="margin-left: 40vw; margin-top: -35vh; position: relative;">
+<div style="margin-bottom: -12vh; margin-top: 5vh;">
+    <div id="trivia_div" style="">
+        <p id="trivia_txt" class="dark_blue" style="font-family: Minecraftia; font-size: 2vh; margin-left: 1ch; width: 100%">
+        If (or should I say when) all the ice on the planet were to melt, the sea level would rise about 79.9 meters (about 260 feet).
+        </p>
+    </div>
+    <div id="cvdiv" style="z-index: 10; "> </div>
 </div>
 
 <script> 
-window.onload = () => {
+redraw = () => {
     const trivia_div = document.querySelector("#trivia_div");
     const trivia_txt = document.querySelector("#trivia_txt");
+    // pose.style.display = "none";
+
+    document.querySelector("#speech_bubble")?.remove();
 
     let height = window.getComputedStyle(trivia_txt, null).height;
     let width = window.getComputedStyle(trivia_txt, null).width;
 
-    height = parseFloat(height.slice(0,-2))+90;
-    width = parseFloat(width.slice(0,-2))+30;
+    height = parseFloat(height.slice(0,-2))+200;
+    width = parseFloat(width.slice(0,-2))+130;
 
     let canvas = document.createElement('canvas');
+    document.querySelector("#cvdiv").appendChild(canvas);
     canvas.width = width;
     canvas.height = height;
-    canvas.style = `top: -${height}px; margin-left: -2%; margin-top: 7%; position: relative;`;
+    canvas.id = "speech_bubble";
+    canvas.style = `margin-top: -${height-160}px;`;
 
     trivia_div.appendChild(canvas);
 
     let ctx = canvas.getContext("2d");
 
+    const hshift = 100;
+    const wshift = 100;
+
+    const pose = new Image(); // Using optional size for image
+
+    pose.addEventListener('load', (e) => {
+        ctx.drawImage(pose, width-170, height-170, e.target.width*0.25, e.target.height*0.25);
+    });
+
+    pose.src = "https://cdn.discordapp.com/attachments/703019773965107250/1000975786683142184/file_1.png";
+
     // left line
     ctx.lineWidth = 5;
     ctx.beginPath();
     ctx.moveTo(5, 15);
-    ctx.lineTo(5, height-60);
+    ctx.lineTo(5, height-60-hshift);
     ctx.stroke();
 
     // top left corner
@@ -351,86 +373,86 @@ window.onload = () => {
     // top line
     ctx.beginPath();
     ctx.moveTo(12, 8);
-    ctx.lineTo(width-20, 8);
+    ctx.lineTo(width-20-wshift, 8);
     ctx.stroke();
 
     // top right corner
     ctx.beginPath();
-    ctx.moveTo(width-18, 10);
-    ctx.lineTo(width-18, 15);
+    ctx.moveTo(width-18-wshift, 10);
+    ctx.lineTo(width-18-wshift, 15);
     ctx.stroke();
 
     // right line
     ctx.beginPath();
-    ctx.moveTo(width-13, 13);
-    ctx.lineTo(width-13, height-60);
+    ctx.moveTo(width-13-wshift, 13);
+    ctx.lineTo(width-13-wshift, height-60-hshift);
     ctx.stroke();
 
     // bottom right corner
     ctx.beginPath();
-    ctx.moveTo(width-17, height-61);
-    ctx.lineTo(width-17, height-56);
+    ctx.moveTo(width-17-wshift, height-61-hshift);
+    ctx.lineTo(width-17-wshift, height-56-hshift);
     ctx.stroke();
 
     // bottom line
     ctx.beginPath();
-    ctx.moveTo(width-19, height-55);
-    ctx.lineTo(10, height-55);
+    ctx.moveTo(width-19-wshift, height-55-hshift);
+    ctx.lineTo(10, height-55-hshift);
     ctx.stroke();
 
     // bottom left corner
     ctx.beginPath();
-    ctx.moveTo(8, height-61);
-    ctx.lineTo(8, height-56);
+    ctx.moveTo(8, height-61-hshift);
+    ctx.lineTo(8, height-56-hshift);
     ctx.stroke();
 
     // the speech arrow
     ctx.beginPath();
     ctx.strokeStyle="#FFFFFF";
     ctx.lineWidth = 6;
-    ctx.moveTo(width-70, height-55);
-    ctx.lineTo(width-40, height-55);
+    ctx.moveTo(width-70-wshift, height-55-hshift);
+    ctx.lineTo(width-40-wshift, height-55-hshift);
     ctx.stroke();
 
     ctx.beginPath();
     ctx.lineWidth = 5;
     ctx.strokeStyle="#000000";
-    ctx.moveTo(width-72, height-55);
-    ctx.lineTo(width-72, height-35);
+    ctx.moveTo(width-72-wshift, height-55-hshift);
+    ctx.lineTo(width-72-wshift, height-35-hshift);
     ctx.stroke();
 
     ctx.beginPath();
     ctx.lineWidth = 5;
-    ctx.moveTo(width-38, height-55);
-    ctx.lineTo(width-38, height-40);
+    ctx.moveTo(width-38-wshift, height-55-hshift);
+    ctx.lineTo(width-38-wshift, height-40-hshift);
     ctx.stroke();
 
     ctx.beginPath();
     ctx.lineWidth = 5;
-    ctx.moveTo(width-68, height-35);
-    ctx.lineTo(width-68, height-30);
+    ctx.moveTo(width-68-wshift, height-35-hshift);
+    ctx.lineTo(width-68-wshift, height-30-hshift);
     ctx.stroke();
 
     ctx.beginPath();
     ctx.lineWidth = 5;
-    ctx.moveTo(width-68, height-30);
-    ctx.lineTo(width-30, height-30);
+    ctx.moveTo(width-68-wshift, height-30-hshift);
+    ctx.lineTo(width-30-wshift, height-30-hshift);
     ctx.stroke();
 
     ctx.beginPath();
     ctx.lineWidth = 5;
-    ctx.moveTo(width-34, height-40);
-    ctx.lineTo(width-34, height-35);
+    ctx.moveTo(width-34-wshift, height-40-hshift);
+    ctx.lineTo(width-34-wshift, height-35-hshift);
     ctx.stroke();
 
     ctx.beginPath();
     ctx.lineWidth = 5;
-    ctx.moveTo(width-30, height-35);
-    ctx.lineTo(width-30, height-27);
+    ctx.moveTo(width-30-wshift, height-35-hshift);
+    ctx.lineTo(width-30-wshift, height-27-hshift);
     ctx.stroke();
-
-
 };
+window.onload = redraw;
+window.onresize = redraw;
 </script>
 
 <h3 id="closing-remarks">Closing Remarks</h3>
