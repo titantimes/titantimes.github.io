@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="img/favicon.ico">
 
 
-    <title>Home - Titan Times</title>
+    <title>Leaderboard - Titan Times</title>
 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
@@ -22,16 +22,17 @@
     <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin'
           rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="css/base.min.css" rel="stylesheet">
-    <link href="css/cinder.min.css" rel="stylesheet">
-    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+    <link href="../css/table.min.css" rel="stylesheet">
+    <link href="../css/swiper.min.css" rel="stylesheet">
 
-
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
 
 
-    <link href="minecraft.css" rel="stylesheet">
+    <link href="../minecraft.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,7 +46,7 @@
 <body>
 <nav class="sticky-bar" id="sticky">
     <div class="sticky-bar__left">
-        <a class="logo" href="index.html">[ANO]</a>
+        <a class="logo" href="../index.html">[ANO]</a>
         <ul>
             <li>
                 <a href="/vol1" class="nav-link" >News</a>
@@ -66,21 +67,7 @@
     </div>
 </nav>
 
-<header class="homepage-header">
-    <div class="container">
-        <div class="col col-lg-5">
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla turpis magna, cursus sit amet, suscipit
-                a, interdum id, felis.</p>
-            <a href="#" class="button black">Random button</a>
-        </div>
-        <div class="col col-lg-7">
-            <img src="/img/titans.png" alt="Titans Valor">
-        </div>
-    </div>
-</header>
-
-<section class="homepage-leaderboard leaderboard">
+<section class="leaderboard-page leaderboard">
     <div class="container">
         <h1>Top Weekly Players</h1>
         <div id="tabs">
@@ -105,6 +92,12 @@
                 </li>
             </ul>
         </div>
+    </div>
+</section>
+
+<section class="leaderboard-table">
+    <div class="container">
+        <div id="table"></div>
     </div>
 </section>
 
@@ -160,9 +153,9 @@
                     <p>Patch 2.0.1 has been released with a ton of new content. The new Corrupted Galleon’s Graveyard dungeon was added to the Forgery 🐸, allowing for a higher mythic chance by completing all eight dungeons. In addition, the Underworld Crypt dungeon bossfight got some love with a new revamp of Charon. Finally, the Breaking Point Quest was added for the Canyon Colossus.</p>
                     <div href="/vol1" class="button">Read more</div>
                 </a>
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
 </section>
 
 <section class="homepage-join-us">
@@ -182,9 +175,9 @@
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script>var base_url = "."</script>
-    <script src="js/base.js"></script>
-    <script src="js/tabs.js" type="module"></script>
-    <script src="search/main.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/tabs.js" type="module"></script>
+    <script src="../search/main.js"></script>
     <script type="module">
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
 
@@ -194,7 +187,7 @@
             slidesPerView: "auto",
         });
     </script>
-
+    <script type="module" src="../js/table.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel"
          aria-hidden="true">
