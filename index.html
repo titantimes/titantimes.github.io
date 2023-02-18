@@ -25,6 +25,7 @@
     <link href="css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="css/base.min.css" rel="stylesheet">
     <link href="css/cinder.min.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet">
 
 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
@@ -42,100 +43,16 @@
 </head>
 
 <body>
-<!--
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-
-
-
-            <a class="navbar-brand" href=".">Titan Times</a>
-
-        </div>
-
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-
-
-                <li class="active">
-                    <a href=".">Home</a>
-                </li>
-
-
-                <li>
-                    <a href="vol1/">Volume 1</a>
-                </li>
-
-
-                <li>
-                    <a href="vol2/">Volume 2</a>
-                </li>
-
-
-                <li>
-                    <a href="vol3/">Volume 3</a>
-                </li>
-
-
-                <li>
-                    <a href="vol4/">Volume 4</a>
-                </li>
-
-
-                <li>
-                    <a href="vol5/">Volume 5</a>
-                </li>
-
-
-                <li>
-                    <a href="vol6/">Volume 6</a>
-                </li>
-
-
-                <li>
-                    <a href="vol7/">Volume 7</a>
-                </li>
-
-
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fas fa-search"></i> Search
-                    </a>
-                </li>
-                <li class="disabled">
-                    <a rel="prev">
-                        <i class="fas fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li>
-                    <a rel="next" href="vol1/">
-                        Next <i class="fas fa-arrow-right"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
--->
-
-<nav class="sticky-bar">
+<nav class="sticky-bar" id="sticky">
     <div class="sticky-bar__left">
-        <a class="logo" href="">[ANO]</a>
+        <a class="logo" href="index.html">[ANO]</a>
         <ul>
-            <li><a class="dropdown" href="">Guild</a><img src="/img/chevron.svg" alt=""></li>
-            <li><a class="dropdown" href="">News</a><img src="/img/chevron.svg" alt=""></li>
-            <li><a class="dropdown" href="">Download</a><img src="/img/chevron.svg" alt=""></li>
+            <li>
+                <a href="/vol1" class="nav-link" >News</a>
+            </li>
+            <li>
+                <a href="/download" class="nav-link" >Download</a>
+            </li>
         </ul>
     </div>
     <div class="sticky-bar__right">
@@ -145,7 +62,7 @@
         <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
             <img src="/img/search.svg" alt="">
         </a>
-        <a href="leaderboard/" class="button gray small">Leaderboard</a>
+        <a href="/leaderboard" class="button gray small">Leaderboard</a>
     </div>
 </nav>
 
@@ -163,16 +80,98 @@
     </div>
 </header>
 
-<section class="homepage-leaderboard">
+<section class="homepage-leaderboard leaderboard">
+    <div class="container">
+        <h1>Top Weekly Players</h1>
+        <div id="tabs">
+            <nav class="js-tabs__nav">
+                <ul class="js-tabs__tabs-container">
+                    <li class="js-tabs__tab active">Wars</li>
+                    <li class="js-tabs__tab">Guild XP</li>
+                    <li class="js-tabs__tab">Activity</li>
+                </ul>
+                <div class="js-tabs__marker"></div>
+            </nav>
 
+            <ul class="js-tabs__content-container">
+                <li class="js-tabs__content active" id="warTab">
+
+                </li>
+                <li class="js-tabs__content" id="xpTab">
+
+                </li>
+                <li class="js-tabs__content" id="activityTab">
+
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <section class="homepage-news">
+    <div class="container">
+        <h2>Titan Times</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla turpis magna, cursus sit amet, suscipit a,
+            interdum id, felis.</p>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <a href="/vol1" class="swiper-slide news-card">
+                    <span>Volume #1</span>
+                    <h3>Woah new newspaper. Exciting times.</h3>
+                    <p>As I’m sure most of you are aware at this point, the new hierarchy was rolled out a few weeks ago! It’s simpler and easier to follow than the one prior, so hopefully no one is too confused anymore. Basically, the cabinets aren’t woven into the hierarchy anymore, so ranking up is based more on activity! You can still join any of the 3 cabinets separately too.</p>
+                    <div href="/vol1" class="button">Read more</div>
+                </a>
+                <a href="/vol2" class="swiper-slide news-card">
+                    <span>Volume #2</span>
+                    <h3>Wynn 2.0. GXP + Ocean Trials. Trivia Event.</h3>
+                    <p>Geb hosted a scavenger hunt over in Adonis, in which participants had to search for designated areas around Gavel based on nondescript images. Some of these were really tough (I definitely wasn’t attempting to find each spot even though I couldn’t attend the live event)! Luckily, our own Biblonko, fatfatsheep87, StellarWombat, TheZeldaBoi, Cal, AssassinThugs, and JoeDeez were able to win some prizes, along with some of our ESI friends. Good job to our excellent scavengers!</p>
+                    <div href="/vol1" class="button">Read more</div>
+                </a>
+                <a href="/vol3" class="swiper-slide news-card">
+                    <span>Volume #3</span>
+                    <h3>[ANO] awards ceremony. More Wynn 2.0. Adonis build event.</h3>
+                    <p>First up on the docket, promotions! Aemor, Miles, CMYBilly, and RSpieter99 have all been promoted to Sorcerer! Additionally, ChristmasBear has been promoted to Artificer! Congrats to the 5 of you for your promotions, and I hope to see some new names up here soon.
+                        Next up, we had an insane build battle with our ESI friends over in Adonis.</p>
+                    <div href="/vol1" class="button">Read more</div>
+                </a>
+                <a href="/vol4" class="swiper-slide news-card">
+                    <span>Volume #4</span>
+                    <h3>Adonis end event. Q&A Wynn 2.0. Wynnguesser</h3>
+                    <p>First up, promotions! I love this part because I get to talk about the guild members that have really stepped it up recently. There’s a good handful this go around since this has been rewritten so many times. Niel1299_TW, RowansWorld, ThrowMusket, Galassia98, explosivegamer25, TM20, Dr_san, wabbalubbadubdub, vxzzy, Gushh, iBug, and Varuhkt have all been promoted to Sorcerer! Additionally, Aemor and Asoart have made the jump to Artificer! Congrats everyone, and let’s get some new names up here soon!</p>
+                    <div href="/vol1" class="button">Read more</div>
+                </a>
+                <a href="/vol5" class="swiper-slide news-card">
+                    <span>Volume #5</span>
+                    <h3>Patch #11 and an interview with Geb.</h3>
+                    <p>Starting off, Patch #11 of the Spellbound Hero Beta was released earlier this month. This included the release of Shaman on the beta, plus a bunch of balance patches for assassin, and a handful of bug fixes (because Wynn is such a perfect game with absolutely 0 bugs) Shaman mains rejoice as your time has come to test out the new content!</p>
+                    <div href="/vol1" class="button">Read more</div>
+                </a>
+                <a href="/vol6" class="swiper-slide news-card">
+                    <span>Volume #6</span>
+                    <h3>Ice leaving. Adonis Parkour. Update survey.</h3>
+                    <p>To start, I want to acknowledge the long term hiatus of ANO’s founder, IceResistance. We’ll miss you Ice, and wish the best for you in your endeavors. Two years will go by in the blink of an eye!
 
+                        2.0 was finally released between my last publication, and it’s been so much fun playing around with the new features (though we’ll see what the rest of the guild thinks in a bit !!). Now is a great time to start new classes and experience the game in a whole new way! I hope you all are having fun with it so far.</p>
+                    <div href="/vol1" class="button">Read more</div>
+                </a>
+                <a href="/vol7" class="swiper-slide news-card">
+                    <span>Volume #7</span>
+                    <h3>Christmas and Events</h3>
+                    <p>Patch 2.0.1 has been released with a ton of new content. The new Corrupted Galleon’s Graveyard dungeon was added to the Forgery 🐸, allowing for a higher mythic chance by completing all eight dungeons. In addition, the Underworld Crypt dungeon bossfight got some love with a new revamp of Charon. Finally, the Breaking Point Quest was added for the Canyon Colossus.</p>
+                    <div href="/vol1" class="button">Read more</div>
+                </a>
+            </a>
+        </div>
+    </div>
 </section>
 
 <section class="homepage-join-us">
-
+    <div class="container">
+        <h2>Join our ranks!</h2>
+        <p>Are you looking to join a fun, interactive Guild to spice up your Wynncraft experience?<br>Join <strong>Titan's Valor [ANO]</strong> today! You can apply on our <a href="https://discord.gg/h8XUHkR" target="_blank">
+            <img src="/img/discord.svg" alt="">
+        </a> server.</p>
+    </div>
 </section>
 
 <div class="container">
@@ -184,7 +183,18 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <script>var base_url = "."</script>
     <script src="js/base.js"></script>
+    <script src="js/tabs.js" type="module"></script>
     <script src="search/main.js"></script>
+    <script type="module">
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
+
+        new Swiper('.swiper', {
+            speed: 400,
+            spaceBetween: 20,
+            slidesPerView: "auto",
+        });
+    </script>
+
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel"
          aria-hidden="true">

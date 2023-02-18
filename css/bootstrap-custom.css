@@ -23,7 +23,7 @@ a {
     background: transparent;
 }
 a:focus {
-    outline: thin dotted;
+    outline: none;
 }
 a:active, a:hover {
     outline: 0;
@@ -223,9 +223,7 @@ a:hover, a:focus {
     text-decoration: underline;
 }
 a:focus {
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
+    outline: none;
 }
 img {
     vertical-align: middle;
@@ -1211,9 +1209,7 @@ select optgroup {
     font-style: inherit;
 }
 input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
+    outline: none;
 }
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
     height: auto;
@@ -1492,9 +1488,7 @@ textarea.input-lg {
     user-select: none;
 }
 .btn:focus {
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
+    outline: none;
 }
 .btn:hover, .btn:focus {
     color: #333;
